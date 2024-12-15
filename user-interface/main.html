@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="temple" class="templeall">
+            <h1>TEMPLE BY REGION</h1>
+            <p>ค้นหาข้อมูลวัดโดยภูมิถาค</p>
+            
+            <div class="slideshow-container">
+                <div class="wat" id="watthai">
+                  <div id="imagewatthai" class="imagewatthai2">
+                    <img src="https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2023/10/26/e917c40b-06fc-4bed-a5f7-f8be70956444_0beaa6f0.jpg?itok=H-2VmDjP&v=1698312536" >
+                    <div class="overlay-text">ภาคเหนือ</div>
+                  </div>
+                  <div id="imagewatthai" class="imagewatthai2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu4_hyAqnVWmcbsaBDIvAjnjfwPAD9bhyAQQ&s">
+                    <div class="overlay-text">ภาคกลาง</div>
+                  </div>
+                  <div id="imagewatthai" class="imagewatthai2">
+                    <img src="https://media.istockphoto.com/id/491698914/photo/grand-palace-and-wat-phra-keaw.jpg?s=612x612&w=0&k=20&c=4JPCpqaHdtqd3YcHIcXp5gVHIE_mofqBcCOEHOsC5lo=">
+                    <div class="overlay-text">ภาคตะวันออกเฉียงเหนือ</div>
+                  </div>
+                  <div id="imagewatthai" class="imagewatthai2">
+                    <img src="https://www.thaizer.com/wp-content/uploads/2013/02/Bangkok-Marble-Temple_1200.jpg" >
+                    <div class="overlay-text">ภาคตะวันตก</div>
+                  </div>
+                  <div id="imagewatthai" class="imagewatthai2">
+                    <img src="https://thetempletrail.com/wp-content/uploads/2013/01/Ubosot-in-Ayutthaya-1024x747.jpg" >
+                    <div class="overlay-text">อื่นๆ</div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="controls">
+                <button onclick="toggleAutoplay()">Toggle Autoplay</button>
+              </div>
+        </div>  
+
+        <script>
+            const slideshow = document.getElementById('watthai');
+            let isAutoplaying = false;
+            let autoplayInterval;
+        
+            function scrollSlideshow() {
+              const slideWidth = slideshow.firstElementChild.offsetWidth;
+              slideshow.scrollBy({
+                left: slideWidth,
+                behavior: 'smooth'
+              });
+        
+              // Reset to the beginning if at the end
+              if (slideshow.scrollLeft + slideshow.offsetWidth >= slideshow.scrollWidth) {
+                setTimeout(() => {
+                  slideshow.scrollTo({ left: 0, behavior: 'smooth' });
+                }, 1000);
+              }
+            }
+        
+            function toggleAutoplay() {
+              isAutoplaying = !isAutoplaying;
+        
+              if (isAutoplaying) {
+                autoplayInterval = setInterval(scrollSlideshow, 3000); // Scroll every 3 seconds
+              } else {
+                clearInterval(autoplayInterval);
+              }
+            }
+        
+            // Allow manual scrolling
+            slideshow.addEventListener('wheel', (e) => {
+              e.preventDefault();
+              slideshow.scrollBy({
+                left: e.deltaY > 0 ? 100 : -100,
+                behavior: 'smooth',
+              });
+            });
+          </script>
+
+    </body>
+    
+</html>

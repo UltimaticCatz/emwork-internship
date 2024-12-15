@@ -1,0 +1,121 @@
+body {
+    margin: 0px;
+}
+
+.templeall {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#temple {
+    background-image: url("https://wallpapers.com/images/featured/plain-background-0aqx3e65vih1xev1.jpg");
+}
+
+.background-container {
+    height: 100vh; /* Full screen height */
+    background: 
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), /* Gradient overlay */
+      url('https://img.freepik.com/free-vector/abstract-watercolor-background_23-2149038179.jpg?semt=ais_hybrid') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    display: flex;
+    font-size: 3rem;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    font-size: 3rem;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Keeps the slideshow contained */
+}
+
+.wat {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    white-space: nowrap; /* Prevent wrapping of slides */
+    gap: 10px; /* Adds spacing between slides */
+}
+
+.imagewatthai2 {
+    flex: 0 0 25%; /* Default to 4 images per row */
+    padding: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagewatthai2 img {
+    display: block;
+    border-radius: 5px;
+    width: 300px; /* Make image responsive */
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Text overlay styling */
+.imagewatthai2 .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+    .imagewatthai2 {
+        flex: 0 0 33.33%; /* 3 images per row */
+
+    }
+}
+
+@media (max-width: 768px) {
+    .imagewatthai2 {
+        flex: 0 0 50%; /* 2 images per row */
+
+    }
+}
+
+.controls {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.controls button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
